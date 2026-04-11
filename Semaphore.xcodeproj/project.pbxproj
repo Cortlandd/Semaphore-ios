@@ -23,20 +23,20 @@
 		8B9B2201608C3BB15021EF7C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E13704379D05798A501C /* Theme.swift */; };
 		904CB0F30C4FE3443F29628C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD797D57BE108A17854C086 /* Models.swift */; };
 		AE720538701D3F47E9B527EC /* SemaphoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB502C2D89A557C0E4AD77 /* SemaphoreApp.swift */; };
-		B0E086F0F170F73A2A033795 /* EditorFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC9DCA2FADC982658D8240C /* EditorFeature.swift */; };
+		B0E086F0F170F73A2A033795 /* UpsertFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC9DCA2FADC982658D8240C /* UpsertFeature.swift */; };
 		C2AF969DC2A3E08BA26C2AC3 /* MarkdownDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A3F56E524D3B69CDC2331 /* MarkdownDocumentView.swift */; };
 		C4C0349B16D01569A83B5E2C /* Clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D5FB73746D31284153A6EE /* Clients.swift */; };
 		DAF8C9BF321254D7B7F4CA52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AA74FA02C94DDD9FC41A8E88 /* ComposableArchitecture */; };
 		E1ED9100BF0E6608968B1F8D /* SemaphoreRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94152F7ED2355294DA62B39 /* SemaphoreRootFeature.swift */; };
 		E42697B7918CA0A81A1AE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23CAB1E4E5DEC495D475190 /* LaunchScreen.storyboard */; };
-		E5EA41A02F88A13F00046282 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA419F2F88A13C00046282 /* EditorView.swift */; };
+		E5EA41A02F88A13F00046282 /* UpsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA419F2F88A13C00046282 /* UpsertView.swift */; };
 		E5EA41A22F88A1C700046282 /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA41A12F88A1C300046282 /* WorkoutListView.swift */; };
 		E5EA41A42F88A24600046282 /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA41A32F88A24100046282 /* SettingsFeature.swift */; };
 		E5EA41A62F88A28B00046282 /* SemaphoreRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA41A52F88A28700046282 /* SemaphoreRootView.swift */; };
 		A10000000000000000000001 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* TestSupport.swift */; };
 		A10000000000000000000002 /* ModelLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* ModelLogicTests.swift */; };
 		A10000000000000000000003 /* WorkoutPlaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* WorkoutPlaybackTests.swift */; };
-		A10000000000000000000004 /* EditorFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* EditorFeatureTests.swift */; };
+		A10000000000000000000004 /* UpsertFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* UpsertFeatureTests.swift */; };
 		A10000000000000000000005 /* WorkoutListFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* WorkoutListFeatureTests.swift */; };
 		A10000000000000000000006 /* SemaphoreRootFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* SemaphoreRootFeatureTests.swift */; };
 		A10000000000000000000007 /* PersistenceAndMediaStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* PersistenceAndMediaStoreTests.swift */; };
@@ -83,7 +83,7 @@
 /* Begin PBXFileReference section */
 		04FB502C2D89A557C0E4AD77 /* SemaphoreApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SemaphoreApp.swift; sourceTree = "<group>"; };
 		2D4249230EE2FF4A7803C64F /* SemaphoreWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SemaphoreWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AC9DCA2FADC982658D8240C /* EditorFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditorFeature.swift; sourceTree = "<group>"; };
+		3AC9DCA2FADC982658D8240C /* UpsertFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UpsertFeature.swift; sourceTree = "<group>"; };
 		3DD797D57BE108A17854C086 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		51554E7FB98515411225838D /* SemaphoreWidgetsBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SemaphoreWidgetsBundle.swift; sourceTree = "<group>"; };
 		57D5FB73746D31284153A6EE /* Clients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Clients.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		C94152F7ED2355294DA62B39 /* SemaphoreRootFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SemaphoreRootFeature.swift; sourceTree = "<group>"; };
 		D1FDE3139E1278B8C8198ECA /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D85697FFD21369FFC17AE5F1 /* WorkoutListFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorkoutListFeature.swift; sourceTree = "<group>"; };
-		E5EA419F2F88A13C00046282 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		E5EA419F2F88A13C00046282 /* UpsertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsertView.swift; sourceTree = "<group>"; };
 		E5EA41A12F88A1C300046282 /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		E5EA41A32F88A24100046282 /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
 		E5EA41A52F88A28700046282 /* SemaphoreRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreRootView.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		A10000000000000000000011 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
 		A10000000000000000000012 /* ModelLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLogicTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000013 /* WorkoutPlaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlaybackTests.swift; sourceTree = "<group>"; };
-		A10000000000000000000014 /* EditorFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFeatureTests.swift; sourceTree = "<group>"; };
+		A10000000000000000000014 /* UpsertFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsertFeatureTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000015 /* WorkoutListFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListFeatureTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000016 /* SemaphoreRootFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreRootFeatureTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000017 /* PersistenceAndMediaStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAndMediaStoreTests.swift; sourceTree = "<group>"; };
@@ -188,13 +188,13 @@
 			path = SemaphoreWidgets;
 			sourceTree = "<group>";
 		};
-		3959F011BA582054DE1B28E8 /* Editor */ = {
+		3959F011BA582054DE1B28E8 /* Upsert */ = {
 			isa = PBXGroup;
 			children = (
-				E5EA419F2F88A13C00046282 /* EditorView.swift */,
-				3AC9DCA2FADC982658D8240C /* EditorFeature.swift */,
+				E5EA419F2F88A13C00046282 /* UpsertView.swift */,
+				3AC9DCA2FADC982658D8240C /* UpsertFeature.swift */,
 			);
-			path = Editor;
+			path = Upsert;
 			sourceTree = "<group>";
 		};
 		411C9EF353B7A82564AA9146 /* Settings */ = {
@@ -270,7 +270,7 @@
 				A10000000000000000000011 /* TestSupport.swift */,
 				A10000000000000000000012 /* ModelLogicTests.swift */,
 				A10000000000000000000013 /* WorkoutPlaybackTests.swift */,
-				A10000000000000000000014 /* EditorFeatureTests.swift */,
+				A10000000000000000000014 /* UpsertFeatureTests.swift */,
 				A10000000000000000000015 /* WorkoutListFeatureTests.swift */,
 				A10000000000000000000016 /* SemaphoreRootFeatureTests.swift */,
 				A10000000000000000000017 /* PersistenceAndMediaStoreTests.swift */,
@@ -345,7 +345,7 @@
 			children = (
 				D2C5F6806DADC48DBB2C1599 /* Root */,
 				88AE2936CD8783293055F8BC /* Workouts */,
-				3959F011BA582054DE1B28E8 /* Editor */,
+				3959F011BA582054DE1B28E8 /* Upsert */,
 				411C9EF353B7A82564AA9146 /* Settings */,
 			);
 			path = Features;
@@ -558,7 +558,7 @@
 				AE720538701D3F47E9B527EC /* SemaphoreApp.swift in Sources */,
 				904CB0F30C4FE3443F29628C /* Models.swift in Sources */,
 				E5EA41A22F88A1C700046282 /* WorkoutListView.swift in Sources */,
-				E5EA41A02F88A13F00046282 /* EditorView.swift in Sources */,
+				E5EA41A02F88A13F00046282 /* UpsertView.swift in Sources */,
 				C4C0349B16D01569A83B5E2C /* Clients.swift in Sources */,
 				E5EA41A42F88A24600046282 /* SettingsFeature.swift in Sources */,
 				736BC472B04F29E31CCC1E9B /* SemaphoreLiveActivityAttributes.swift in Sources */,
@@ -566,7 +566,7 @@
 				88BFC152432B8D4B65A67CBC /* WorkoutPlayback.swift in Sources */,
 				E1ED9100BF0E6608968B1F8D /* SemaphoreRootFeature.swift in Sources */,
 				2345E9F0852CFD112C364892 /* WorkoutListFeature.swift in Sources */,
-				B0E086F0F170F73A2A033795 /* EditorFeature.swift in Sources */,
+				B0E086F0F170F73A2A033795 /* UpsertFeature.swift in Sources */,
 				8B9B2201608C3BB15021EF7C /* Theme.swift in Sources */,
 				4A8D8E47FF49071EEFACBFD1 /* SettingsView.swift in Sources */,
 				5ABA61181518E8B94487FFD0 /* AnalyticsView.swift in Sources */,
@@ -598,7 +598,7 @@
 				A10000000000000000000001 /* TestSupport.swift in Sources */,
 				A10000000000000000000002 /* ModelLogicTests.swift in Sources */,
 				A10000000000000000000003 /* WorkoutPlaybackTests.swift in Sources */,
-				A10000000000000000000004 /* EditorFeatureTests.swift in Sources */,
+				A10000000000000000000004 /* UpsertFeatureTests.swift in Sources */,
 				A10000000000000000000005 /* WorkoutListFeatureTests.swift in Sources */,
 				A10000000000000000000006 /* SemaphoreRootFeatureTests.swift in Sources */,
 				A10000000000000000000007 /* PersistenceAndMediaStoreTests.swift in Sources */,

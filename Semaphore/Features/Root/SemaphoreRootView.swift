@@ -7,12 +7,12 @@ public struct SemaphoreRootView: View {
 
     private struct ViewState: Equatable {
         var isSettingsPresented: Bool
-        var isEditorPresented: Bool
+        var isUpsertPresented: Bool
         var alertMessage: String?
 
         init(state: SemaphoreRootFeature.State) {
             self.isSettingsPresented = state.isSettingsPresented
-            self.isEditorPresented = state.editor != nil
+            self.isUpsertPresented = state.upsert != nil
             self.alertMessage = state.alertMessage
         }
     }
@@ -56,13 +56,13 @@ public struct SemaphoreRootView: View {
             }
             .sheet(
                 isPresented: viewStore.binding(
-                    get: \.isEditorPresented,
-                    send: SemaphoreRootFeature.Action.setEditorPresented
+                    get: \.isUpsertPresented,
+                    send: SemaphoreRootFeature.Action.setUpsertPresented
                 )
             ) {
-                if let editorStore = store.scope(state: \.editor, action: \.editor) {
+                if let upsertStore = store.scope(state: \.upsert, action: \.upsert) {
                     NavigationStack {
-                        EditorView(store: editorStore)
+                        UpsertView(store: upsertStore)
                     }
                     .toolbarBackground(.hidden, for: .navigationBar)
                 }

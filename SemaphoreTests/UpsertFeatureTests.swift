@@ -3,10 +3,10 @@ import XCTest
 @testable import Semaphore
 
 @MainActor
-final class EditorFeatureTests: XCTestCase {
+final class UpsertFeatureTests: XCTestCase {
     func testSaveTappedRequiresValidDraft() async {
-        let store = TestStore(initialState: EditorFeature.State()) {
-            EditorFeature()
+        let store = TestStore(initialState: UpsertFeature.State()) {
+            UpsertFeature()
         }
 
         await store.send(.saveTapped) {
@@ -15,12 +15,12 @@ final class EditorFeatureTests: XCTestCase {
     }
 
     func testPickingMediaClearsExistingRemoteState() async {
-        var initialState = EditorFeature.State()
+        var initialState = UpsertFeature.State()
         initialState.currentImageLocation = "https://example.com/old.gif"
         initialState.remoteImageURL = "https://example.com/old.gif"
 
         let store = TestStore(initialState: initialState) {
-            EditorFeature()
+            UpsertFeature()
         }
 
         let data = Data([0x47, 0x49, 0x46, 0x38])
@@ -32,12 +32,12 @@ final class EditorFeatureTests: XCTestCase {
     }
 
     func testBindingRemoteURLClearsImportedMedia() async {
-        var initialState = EditorFeature.State()
+        var initialState = UpsertFeature.State()
         initialState.selectedMediaData = Data([0x01, 0x02])
         initialState.currentImageLocation = "file:///tmp/local.gif"
 
         let store = TestStore(initialState: initialState) {
-            EditorFeature()
+            UpsertFeature()
         }
 
         await store.send(.binding(.set(\.remoteImageURL, "https://example.com/new.gif"))) {

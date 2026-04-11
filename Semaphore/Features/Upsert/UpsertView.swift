@@ -1,5 +1,5 @@
 //
-//  EditorView.swift
+//  UpsertView.swift
 //  Semaphore
 //
 //  Created by Cortland on 4/9/26.
@@ -10,13 +10,13 @@ import SwiftUI
 import ComposableArchitecture
 import PhotosUI
 
-public struct EditorView: View {
-    @Perception.Bindable var store: StoreOf<EditorFeature>
+public struct UpsertView: View {
+    @Perception.Bindable var store: StoreOf<UpsertFeature>
 
     @Environment(\.dismiss) private var dismiss
     @State private var photosPickerItem: PhotosPickerItem?
 
-    public init(store: StoreOf<EditorFeature>) {
+    public init(store: StoreOf<UpsertFeature>) {
         self.store = store
     }
 
@@ -198,7 +198,7 @@ public struct EditorView: View {
 }
 
 private struct TimePickerCard: View {
-    @Perception.Bindable var store: StoreOf<EditorFeature>
+    @Perception.Bindable var store: StoreOf<UpsertFeature>
 
     var body: some View {
         HStack(spacing: 12) {

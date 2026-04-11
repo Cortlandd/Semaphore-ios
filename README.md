@@ -5,7 +5,7 @@ Semaphore is an iOS workout timer app built with SwiftUI and the Composable Arch
 ## Project structure
 
 - `Semaphore/Core` contains app entry, models, persistence, and playback services.
-- `Semaphore/Features` contains the main product features like workouts, editor, and settings.
+- `Semaphore/Features` contains the main product features like workouts, upsert, and settings.
 - `Semaphore/Shared` contains shared UI building blocks and theme code.
 - `Semaphore/ExtraResources` contains app-owned markdown content such as the FAQ.
 - `SemaphoreWidgets` contains the Live Activity widget used for the Lock Screen and Dynamic Island timer UI.

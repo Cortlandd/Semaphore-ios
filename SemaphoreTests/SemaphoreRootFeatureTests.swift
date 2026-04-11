@@ -62,7 +62,7 @@ final class SemaphoreRootFeatureTests: XCTestCase {
         initialState.workoutList.workouts = [existingWorkout]
         initialState.workoutList.displayMode = .content
         initialState.settings.workouts = [existingWorkout]
-        initialState.editor = EditorFeature.State(workout: existingWorkout)
+        initialState.upsert = UpsertFeature.State(workout: existingWorkout)
 
         let store = TestStore(initialState: initialState) {
             SemaphoreRootFeature()
@@ -85,9 +85,9 @@ final class SemaphoreRootFeatureTests: XCTestCase {
             selectedMediaData: Data([0x47, 0x49, 0x46, 0x38])
         )
 
-        await store.send(.editor(.delegate(.saveRequested(draft))))
+        await store.send(.upsert(.delegate(.saveRequested(draft))))
         await store.receive(
-            .editorSaveCompleted(
+            .upsertSaveCompleted(
                 makeWorkout(
                     id: existingWorkout.id,
                     createdAt: existingWorkout.createdAt,
@@ -107,7 +107,7 @@ final class SemaphoreRootFeatureTests: XCTestCase {
             $0.workoutList.workouts[0].minutes = 2
             $0.workoutList.workouts[0].seconds = 15
             $0.workoutList.displayMode = .content
-            $0.editor = nil
+            $0.upsert = nil
             $0.settings.workouts = $0.workoutList.workouts
         }
 

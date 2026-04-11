@@ -3,7 +3,7 @@ import PhotosUI
 import SwiftUI
 
 @Reducer
-public struct EditorFeature {
+public struct UpsertFeature {
     @ObservableState
     public struct State: Identifiable, Equatable {
         public var workoutID: String?

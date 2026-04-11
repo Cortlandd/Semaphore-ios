@@ -6,7 +6,7 @@ public struct SemaphoreRootFeature {
     @ObservableState
     public struct State: Equatable {
         public var workoutList = WorkoutListFeature.State()
-        public var editor: EditorFeature.State?
+        public var upsert: UpsertFeature.State?
         public var isSettingsPresented = false
         public var settings = SettingsFeature.State(version: AppMetadata.displayVersion)
         public var alertMessage: String?
@@ -20,10 +20,10 @@ public struct SemaphoreRootFeature {
         case workoutsLoadFailed(String)
         case workoutsPersistFailed(String)
         case workoutList(WorkoutListFeature.Action)
-        case editor(EditorFeature.Action)
-        case editorSaveCompleted(Workout)
-        case editorSaveFailed(String)
-        case setEditorPresented(Bool)
+        case upsert(UpsertFeature.Action)
+        case upsertSaveCompleted(Workout)
+        case upsertSaveFailed(String)
+        case setUpsertPresented(Bool)
         case setSettingsPresented(Bool)
         case settings(SettingsFeature.Action)
         case alertDismissed
@@ -76,7 +76,7 @@ public struct SemaphoreRootFeature {
                 return .none
 
             case .workoutList(.delegate(.addWorkoutRequested)):
-                state.editor = EditorFeature.State()
+                state.upsert = UpsertFeature.State()
                 syncSettings(from: &state)
                 return .none
 
@@ -87,7 +87,7 @@ public struct SemaphoreRootFeature {
                     return .none
                 }
 
-                state.editor = EditorFeature.State(workout: workout)
+                state.upsert = UpsertFeature.State(workout: workout)
                 syncSettings(from: &state)
                 return .none
 
@@ -103,12 +103,12 @@ public struct SemaphoreRootFeature {
                     workoutPersistence: workoutPersistence
                 )
 
-            case .editor(.delegate(.cancelRequested)):
-                state.editor = nil
+            case .upsert(.delegate(.cancelRequested)):
+                state.upsert = nil
                 syncSettings(from: &state)
                 return .none
 
-            case .editor(.delegate(.saveRequested(let draft))):
+            case .upsert(.delegate(.saveRequested(let draft))):
                 let existingWorkout = draft.workoutID.flatMap { workoutID in
                     state.workoutList.workouts.first(where: { $0.id == workoutID })
                 }
@@ -129,13 +129,13 @@ public struct SemaphoreRootFeature {
                             currentCount: currentCount
                         )
 
-                        await send(.editorSaveCompleted(workout))
+                        await send(.upsertSaveCompleted(workout))
                     } catch {
-                        await send(.editorSaveFailed(error.localizedDescription))
+                        await send(.upsertSaveFailed(error.localizedDescription))
                     }
                 }
 
-            case .editorSaveCompleted(let workout):
+            case .upsertSaveCompleted(let workout):
                 if let existingIndex = state.workoutList.workouts.firstIndex(where: { $0.id == workout.id }) {
                     state.workoutList.workouts[existingIndex] = workout
                 } else {
@@ -148,21 +148,21 @@ public struct SemaphoreRootFeature {
                 }
 
                 state.workoutList.displayMode = state.workoutList.workouts.isEmpty ? .empty : .content
-                state.editor = nil
+                state.upsert = nil
                 syncSettings(from: &state)
                 return persistWorkouts(
                     state.workoutList.workouts,
                     workoutPersistence: workoutPersistence
                 )
 
-            case .editorSaveFailed(let message):
+            case .upsertSaveFailed(let message):
                 state.alertMessage = message
                 syncSettings(from: &state)
                 return .none
 
-            case .setEditorPresented(let isPresented):
+            case .setUpsertPresented(let isPresented):
                 if !isPresented {
-                    state.editor = nil
+                    state.upsert = nil
                 }
                 syncSettings(from: &state)
                 return .none
@@ -182,13 +182,13 @@ public struct SemaphoreRootFeature {
                 syncSettings(from: &state)
                 return .none
 
-            case .editor, .settings, .workoutList:
+            case .upsert, .settings, .workoutList:
                 syncSettings(from: &state)
                 return .none
             }
         }
-        .ifLet(\.editor, action: \.editor) {
-            EditorFeature()
+        .ifLet(\.upsert, action: \.upsert) {
+            UpsertFeature()
         }
     }
 
